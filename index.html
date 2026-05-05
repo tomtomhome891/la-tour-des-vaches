@@ -1,1 +1,109 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Tour des Vaches - Fromagerie Bio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>La Tour des Vaches</h1>
+    <p>Le goût authentique du bio, d'Aurore et Guillaume Lattard</p>
+    <nav>
+        <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#points-de-vente">Points de vente</a></li>
+            <li><a href="#boutique">Boutique & Panier</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <!-- PAGE 1 : ACCUEIL -->
+    <section id="accueil" class="page">
+        <div class="hero">
+            <h2>Bienvenue à la Ferme</h2>
+            <p>Située à <strong>Mornans</strong>, notre exploitation met à l'honneur le respect de la terre et des animaux. Aurore et Guillaume travaillent chaque jour pour vous offrir des produits laitiers d'exception : fromages affinés, yaourts onctueux et crème fraîche, le tout certifié Bio.</p>
+            <img src="https://images.unsplash.com/photo-1484244233201-29892afe6a2c?auto=format&fit=crop&q=80&w=800" alt="Vaches au pâturage">
+        </div>
+    </section>
+
+    <!-- PAGE 2 : POINTS DE VENTE -->
+    <section id="points-de-vente" class="page">
+        <h2>Où nous trouver ?</h2>
+        <div class="vente-container">
+            <div class="lieu">
+                <h3>Marché de Bourdeaux</h3>
+                <p>📍 Centre-ville</p>
+                <p>🕒 Tous les <strong>jeudis de 7h à 13h</strong></p>
+                <p><em>C'est ici que vous récupérez vos commandes passées en ligne !</em></p>
+            </div>
+            <div class="lieu">
+                <h3>Magasin Spar</h3>
+                <p>📍 Bourdeaux</p>
+                <a href="https://maps.google.com/maps?..." target="_blank" class="btn-map">Voir sur la carte</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAGE 3 : BOUTIQUE -->
+    <section id="boutique" class="page">
+        <h2>Nos Produits Bio</h2>
+        <p class="info-livraison">⚠️ Click & Collect : Retrait uniquement le jeudi matin au marché de Bourdeaux.</p>
+        
+        <div class="produits-grid">
+            <div class="produit">
+                <h3>Yaourts aromatisés (x6)</h3>
+                <p>Format 125g - Parfum selon saison</p>
+                <span class="prix">4 €</span>
+                <button onclick="ajouterAuPanier('Yaourts (x6)', 4)">Ajouter</button>
+            </div>
+            <div class="produit">
+                <h3>Crème Fraiche</h3>
+                <p>Pot de 500ml</p>
+                <span class="prix">6 €</span>
+                <button onclick="ajouterAuPanier('Crème 500ml', 6)">Ajouter</button>
+            </div>
+            <div class="produit">
+                <h3>Petit Fromage</h3>
+                <p>L'unité - Affinage traditionnel</p>
+                <span class="prix">3 €</span>
+                <button onclick="ajouterAuPanier('Petit Fromage', 3)">Ajouter</button>
+            </div>
+            <div class="produit">
+                <h3>Panier Surprise</h3>
+                <p>Sélection de produits de la ferme</p>
+                <span class="prix">15 €</span>
+                <button onclick="ajouterAuPanier('Panier Surprise', 15)">Ajouter</button>
+            </div>
+        </div>
+
+        <!-- PANIER / BON DE COMMANDE -->
+        <div id="panier-section">
+            <h3>Votre Bon de Commande</h3>
+            <ul id="liste-panier">
+                <!-- Rempli par JS -->
+            </ul>
+            <p><strong>Total : <span id="total-prix">0</span> €</strong></p>
+            <form id="form-commande">
+                <input type="text" id="nom" placeholder="Votre Nom et Prénom" required>
+                <button type="submit" class="btn-commander">Valider ma commande</button>
+            </form>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="contact">
+        <p><strong>La Tour des Vaches</strong> - Aurore et Guillaume LATTARD</p>
+        <p>26400 MORNANS | 📞 06 15 24 72 16</p>
+        <p>📧 latourdesvache@gmail.com</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
