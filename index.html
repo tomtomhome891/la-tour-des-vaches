@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -10,8 +9,13 @@
 <body>
 
 <header>
-    <h1>La Tour des Vaches</h1>
-    <p>Le goût authentique du bio, d'Aurore et Guillaume Lattard</p>
+    <div class="header-container">
+        <img src="logolatour.jpg" alt="Logo La Tour des Vaches" class="logo-header">
+        <div class="header-text">
+            <h1>La Tour des Vaches</h1>
+            <p>Le goût authentique du bio, d'Aurore et Guillaume Lattard</p>
+        </div>
+    </div>
     <nav>
         <ul>
             <li><a href="#accueil">Accueil</a></li>
@@ -22,7 +26,6 @@
 </header>
 
 <main>
-    <!-- PAGE 1 : ACCUEIL -->
     <section id="accueil" class="page">
         <div class="hero">
             <h2>Bienvenue à la Ferme</h2>
@@ -31,7 +34,6 @@
         </div>
     </section>
 
-    <!-- PAGE 2 : POINTS DE VENTE -->
     <section id="points-de-vente" class="page">
         <h2>Où nous trouver ?</h2>
         <div class="vente-container">
@@ -49,7 +51,6 @@
         </div>
     </section>
 
-    <!-- PAGE 3 : BOUTIQUE -->
     <section id="boutique" class="page">
         <h2>Nos Produits Bio</h2>
         <p class="info-livraison">⚠️ Click & Collect : Retrait uniquement le jeudi matin au marché de Bourdeaux.</p>
@@ -81,12 +82,10 @@
             </div>
         </div>
 
-        <!-- PANIER / BON DE COMMANDE -->
         <div id="panier-section">
             <h3>Votre Bon de Commande</h3>
             <ul id="liste-panier">
-                <!-- Rempli par JS -->
-            </ul>
+                </ul>
             <p><strong>Total : <span id="total-prix">0</span> €</strong></p>
             <form id="form-commande">
                 <input type="text" id="nom" placeholder="Votre Nom et Prénom" required>
