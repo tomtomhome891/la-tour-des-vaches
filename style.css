@@ -1,127 +1,268 @@
+/* --- VARIABLES DE COULEURS --- */
 :root {
     --vert-bio: #4CAF50;
     --marron: #5d4037;
     --creme: #f9fbe7;
+    --blanc: #ffffff;
+    --gris-leger: #eeeeee;
+    --ombre: rgba(0, 0, 0, 0.1);
 }
 
+/* --- STYLE GÉNÉRAL --- */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    background-color: #fff;
+    padding: 0;
+    background-color: var(--blanc);
     color: var(--marron);
     line-height: 1.6;
 }
 
+/* --- EN-TÊTE (HEADER) --- */
 header {
     background-color: var(--vert-bio);
-    color: white;
-    padding: 2rem;
+    color: var(--blanc);
+    padding: 2rem 1rem;
     text-align: center;
+    box-shadow: 0 2px 5px var(--ombre);
 }
 
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto 20px auto;
+}
+
+.logo-header {
+    height: 120px; /* Taille du logo */
+    width: auto;
+    background: var(--blanc);
+    padding: 10px;
+    border-radius: 50%; /* Logo en forme de cercle */
+    box-shadow: 0 4px 8px var(--ombre);
+}
+
+.header-text h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.header-text p {
+    margin: 5px 0 0 0;
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+/* --- NAVIGATION --- */
 nav ul {
     list-style: none;
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
+    margin-top: 20px;
 }
 
 nav a {
-    color: white;
+    color: var(--blanc);
     text-decoration: none;
     font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s;
 }
 
+nav a:hover {
+    color: var(--marron);
+    text-decoration: underline;
+}
+
+/* --- SECTIONS ET PAGES --- */
 .page {
-    padding: 40px 20px;
+    padding: 60px 20px;
     max-width: 1000px;
     margin: auto;
+    border-bottom: 1px solid var(--gris-leger);
+}
+
+h2 {
+    color: var(--vert-bio);
+    border-left: 5px solid var(--marron);
+    padding-left: 15px;
+    margin-bottom: 30px;
+}
+
+/* --- ACCUEIL --- */
+.hero {
+    text-align: center;
 }
 
 .hero img {
     width: 100%;
+    max-height: 500px;
+    object-fit: cover;
     border-radius: 15px;
-    margin-top: 20px;
+    margin-top: 30px;
+    box-shadow: 0 4px 15px var(--ombre);
+}
+
+/* --- POINTS DE VENTE --- */
+.vente-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.lieu {
+    background: var(--creme);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #e0e4cc;
+}
+
+.btn-map {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--vert-bio);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* --- BOUTIQUE ET PRODUITS --- */
+.info-livraison {
+    background: #fff3cd;
+    color: #856404;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    font-weight: bold;
 }
 
 .produits-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
 }
 
 .produit {
     border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 10px;
+    padding: 20px;
+    border-radius: 15px;
     text-align: center;
-    background: var(--creme);
+    background: var(--blanc);
+    transition: transform 0.2s;
+}
+
+.produit:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px var(--ombre);
+}
+
+.produit h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
 }
 
 .prix {
     display: block;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: bold;
-    margin: 10px 0;
+    color: var(--marron);
+    margin: 15px 0;
 }
 
-#panier-section {
-    margin-top: 50px;
-    background: #eee;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.btn-commander {
-    background: var(--vert-bio);
+.produit button {
+    background-color: var(--vert-bio);
     color: white;
     border: none;
     padding: 10px 20px;
+    border-radius: 25px;
     cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+}
+
+/* --- PANIER --- */
+#panier-section {
+    margin-top: 60px;
+    background: var(--gris-leger);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+#liste-panier {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+#liste-panier li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+}
+
+#form-commande {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+}
+
+#form-commande input {
+    padding: 12px;
+    border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-button:hover {
-    opacity: 0.8;
-}
-
-footer {
+.btn-commander {
     background: var(--marron);
     color: white;
+    border: none;
+    padding: 15px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* --- FOOTER --- */
+footer {
+    background: var(--marron);
+    color: var(--blanc);
     text-align: center;
-    padding: 20px;
-    margin-top: 50px;
+    padding: 40px 20px;
+    margin-top: 60px;
 }
 
-/* Styles pour intégrer le logo dans le header */
-.header-container {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Centre l'ensemble logo + texte */
-    gap: 20px; /* Espace entre le logo et le texte */
-    flex-wrap: wrap;
+footer p {
+    margin: 5px 0;
 }
 
-.logo-header {
-    height: 100px; /* Ajustez la taille selon vos envies */
-    width: auto;
-    border-radius: 50%; /* Optionnel : rend le logo un peu arrondi si désiré */
-    background: white; /* Fond blanc derrière le logo pour qu'il ressorte sur le vert */
-    padding: 5px;
-}
-
-.header-text {
-    text-align: left;
-}
-
-/* On ajuste pour le mobile */
+/* --- RESPONSIVE --- */
 @media (max-width: 600px) {
     .header-container {
         flex-direction: column;
         text-align: center;
     }
+    
     .header-text {
         text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .logo-header {
+        height: 100px;
     }
 }
